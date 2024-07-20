@@ -1,0 +1,23 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 1
+
+[[patches]]
+[patches.regex]
+target = 'card.lua'
+pattern = 'repetitions \= 1,\W                    card \= self'
+position = 'at'
+payload = '''repetitions = self.SRSreps or 1,
+                    card = self'''
+overwrite = true
+
+[[patches]]
+[patches.regex]
+target = 'if _seal then'
+pattern = ''
+position = 'at'
+payload = '''if _seal then
+        SRS_setRedSeal(self,_seal)
+'''
+overwrite = true
