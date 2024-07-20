@@ -1,12 +1,19 @@
 --- STEAMODDED HEADER
 --- MOD_NAME: Stacked Red Seals
 --- MOD_ID: StackedRedSeals
---- MOD_AUTHOR: [CerloCasa]
+--- MOD_AUTHOR: [Cerlo]
 --- MOD_DESCRIPTION: This mod lets you have cards with multiple Red Seals 
 --- BADGE_COLOR: F7433A
 --- PREFIX: SRS
 --- LOADER_VERSION_GEQ: 1.0.0
---- VERSION: snapshot24w29a
+--- VERSION: 1.0
+
+SMODS.Atlas { -- modicon
+    key = 'modicon',
+    px = 34,
+    py = 34,
+    path = 'modicon.png',
+}   
 
 function SMODS.current_mod.process_loc_text()
     G.localization.descriptions.Other['SRSredSealDefinition'] = {
