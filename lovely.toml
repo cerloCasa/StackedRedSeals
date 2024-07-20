@@ -14,10 +14,25 @@ overwrite = true
 
 [[patches]]
 [patches.regex]
-target = 'if _seal then'
-pattern = ''
+target = 'card.lua'
+pattern = 'if _seal then'
 position = 'at'
 payload = '''if _seal then
         SRS_setRedSeal(self,_seal)
 '''
+overwrite = true
+
+[[patches]]
+[patches.regex]
+target = 'functions/common_events.lua'
+pattern = 'if v \== .red.*'
+position = 'at'
+payload = '''if v == 'red_seal' then
+                if card.SRSreps and card.SRSreps > 1 then
+                    info_queue[#info_queue+1] = {key = 'SRSredSeal', set = 'Other', vars = {card.SRSreps}}
+                else
+                    info_queue[#info_queue+1] = {key = 'red_seal', set = 'Other'}
+                end
+            end'''
+
 overwrite = true

@@ -16,15 +16,8 @@ function SMODS.current_mod.process_loc_text()
             "card {C:attention}1{} more time"
           }
     }
-    G.localization.descriptions.Other['SRSredSeal1'] = {
-        name = 'Red Seal',
-        text = {
-            "Retrigger this",
-            "card {C:attention}1{} time"
-          }
-    }
-    G.localization.descriptions.Other['SRSredSeal2'] = {
-        name = 'Red Seal',
+    G.localization.descriptions.Other['SRSredSeal'] = {
+        name = 'Stacked Red Seals',
         text = {
             "Retrigger this",
             "card {C:attention}#1#{} times"
@@ -35,7 +28,7 @@ end
 
 function SRS_setRedSeal(card,seal)
     -- Use a lovely.toml patch to hook this function inside Card:set_seal
-    if seal.ability.name == 'Red Seal' then
+    if seal == 'Red' then
         if card.SRSreps then
             card.SRSreps = card.SRSreps + 1
         else
