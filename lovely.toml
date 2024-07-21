@@ -8,7 +8,7 @@ priority = 1
 target = 'card.lua'
 pattern = 'repetitions \= 1,\W                    card \= self'
 position = 'at'
-payload = '''repetitions = self.SRSreps or 1,
+payload = '''repetitions = self.ability.SRSreps or 1,
                     card = self'''
 overwrite = true
 
@@ -28,8 +28,8 @@ target = 'functions/common_events.lua'
 pattern = 'if v \== .red.*'
 position = 'at'
 payload = '''if v == 'red_seal' then
-                if card.SRSreps and card.SRSreps > 1 then
-                    info_queue[#info_queue+1] = {key = 'SRSredSeal', set = 'Other', vars = {card.SRSreps}}
+                if card.ability.SRSreps and card.ability.SRSreps > 1 then
+                    info_queue[#info_queue+1] = {key = 'SRSredSeal', set = 'Other', vars = {card.ability.SRSreps}}
                 else
                     info_queue[#info_queue+1] = {key = 'red_seal', set = 'Other'}
                 end

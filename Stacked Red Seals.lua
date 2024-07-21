@@ -6,7 +6,7 @@
 --- BADGE_COLOR: F7433A
 --- PREFIX: SRS
 --- LOADER_VERSION_GEQ: 1.0.0
---- VERSION: 1.0
+--- VERSION: snapshot24w29b
 
 SMODS.Atlas { -- modicon
     key = 'modicon',
@@ -36,12 +36,12 @@ end
 function SRS_setRedSeal(card,seal)
     -- Use a lovely.toml patch to hook this function inside Card:set_seal
     if seal == 'Red' then
-        if card.SRSreps then
-            card.SRSreps = card.SRSreps + 1
+        if card.ability.SRSreps then
+            card.ability.SRSreps = card.ability.SRSreps + 1
         else
-            card.SRSreps = 1
+            card.ability.SRSreps = 1
         end
     else
-        card.SRSreps = nil
+        card.ability.SRSreps = nil
     end
 end
