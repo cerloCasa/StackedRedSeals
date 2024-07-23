@@ -1,4 +1,4 @@
-![modicon](https://raw.githubusercontent.com/cerloCasa/StackedRedSeals/main/assets/2x/modicon.png)
+![modicon](https://raw.githubusercontent.com/cerloCasa/StackedRedSeals/main/assets/2x/modicon%20by%20%40b.b.b.b..png)
 # Stacked Red Seals
 This Balatro mod makes it possible to add multiple Red Seals to your playing cards, making them retriggering many times.
 
