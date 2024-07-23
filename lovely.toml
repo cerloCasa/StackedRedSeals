@@ -15,9 +15,9 @@ overwrite = true
 [[patches]]
 [patches.regex]
 target = 'card.lua'
-pattern = 'if _seal then'
+pattern = 'self\.seal \= _seal'
 position = 'at'
-payload = '''if _seal then
+payload = '''self.seal = _seal
         SRS_setRedSeal(self,_seal)
 '''
 overwrite = true
