@@ -12,7 +12,7 @@ SMODS.Atlas { -- modicon
     key = 'modicon',
     px = 34,
     py = 34,
-    path = 'modicon.png',
+    path = 'modicon by @b.b.b.b..png',
 }   
 
 load(NFS.read(SMODS.current_mod.path .. 'config.lua'))()
