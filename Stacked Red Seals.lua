@@ -15,7 +15,9 @@ SMODS.Atlas { -- modicon
     path = 'modicon by @b.b.b.b..png',
 }   
 
-load(NFS.read(SMODS.current_mod.path .. 'config.lua'))()
+local config = SMODS.current_mod.config
+local RedSealsForCard = config.RedSealsForCard
+local MaxRedSeals = config.MaxRedSeals
 
 function SMODS.current_mod.process_loc_text()
     G.localization.descriptions.Other['SRSredSealDefinition'] = {
@@ -43,14 +45,14 @@ function SRS_setRedSeal(card,seal)
     if seal == 'Red' then
         if card.ability.SRSreps then
             -- If the card has already Red Seal
-            card.ability.SRSreps = card.ability.SRSreps + SRS_RedSealsForCard
+            card.ability.SRSreps = card.ability.SRSreps + config.RedSealsForCard
         else
             -- If the card doesn't have already Red Seal
-            card.ability.SRSreps = SRS_RedSealsForCard
+            card.ability.SRSreps = config.RedSealsForCard
         end
-        if card.ability.SRSreps > SRS_MaxRedSeals and SRS_MaxRedSeals >= 0 then
+        if card.ability.SRSreps > config.MaxRedSeals and config.MaxRedSeals >= 0 then
             -- If the repetitions exceed the limit, set them to the limit
-            card.ability.SRSreps = SRS_MaxRedSeals
+            card.ability.SRSreps = config.MaxRedSeals
         end
         if card.ability.SRSreps == 0 then
             -- If the repetitions are 0, remove the Red Seal
