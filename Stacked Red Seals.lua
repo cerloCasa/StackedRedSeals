@@ -36,7 +36,6 @@ function SMODS.current_mod.process_loc_text()
 end
 
 function SRS_setRedSeal(card,seal)
-    G.consumeables.config.card_limit = 150
     -- Use a lovely.toml patch to hook this function inside Card:set_seal
     if card.area ~= G.hand then
         return
