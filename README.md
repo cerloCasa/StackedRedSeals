@@ -7,6 +7,9 @@ This Balatro mod makes it possible to add multiple Red Seals to your playing car
 - *Faces of Sin by TitledHat, Victin*
 - *NotJustYet by toneblock*
 
+## Config page
+If you go inside this mod's page inside the Mods menu and click on "Config", you can tweak the settings of this mod.  
+Any letters are interpreted as the number 0.
 
 ## Attention
 If you experience a bug with this mod, please file an issue here on Github or write a message in the [Discord post](https://discord.com/channels/1116389027176787968/1264020405400633354).
